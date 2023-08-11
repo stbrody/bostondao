@@ -52,12 +52,14 @@ for i in data:
 
 df = pd.DataFrame.from_dict(data_dict)
 
-dt = "{y}-{m}-{d} {H}:{M}".format(
-    y = datetime.datetime.today().year,
-    m = datetime.datetime.today().month,
-    d = datetime.datetime.today().day,
-    H = datetime.datetime.today().hour,
-    M = datetime.datetime.today().minute)
+now = datetime.datetime.today()
+dt = "{y}-{m}-{d}.{H}:{M}:{S}".format(
+    y = now.year,
+    m = now.month,
+    d = now.day,
+    H = now.hour,
+    M = now.minute,
+    S = now.second)
 
-df.to_csv("nominations {}.csv".format(dt))
+df.to_csv("votes-{}.csv".format(dt))
 

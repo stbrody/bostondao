@@ -55,7 +55,7 @@ for i in data:
     data_dict["date"].append(i["message"]["date"])
     # handle error for when photos are sent and there is no "text" param
     if "text" in list(i["message"].keys()):
-      if "/nominate" in i["message"]["text"]:
+      if "/vote" in i["message"]["text"]:
         vote = True
       data_dict["text"].append(i["message"]["text"])
       data_dict["vote"].append(vote)
